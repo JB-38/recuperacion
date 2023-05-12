@@ -1,156 +1,168 @@
-let preguntas_aleatorias = true;
-let mostrar_pantalla_juego_términado = true;
-let reiniciar_puntos_al_reiniciar_el_juego = true;
+class Juego{
+  preguntas_aleatorias = true;
+  mostrar_pantalla_juego_términado = true;
+  reiniciar_puntos_al_reiniciar_el_juego = true;
 
-window.onload = function () {
-  base_preguntas = readText("base-preguntas.json");
-  interprete_bp = JSON.parse(base_preguntas);
-  escogerPreguntaAleatoria();
-};
-
-let pregunta;
-let posibles_respuestas;
-btn_correspondiente = [
-  select_id("btn1"),
-  select_id("btn2"),
-  select_id("btn3"),
-  select_id("btn4"),
-  select_id("btn5")
-];
-let npreguntas = [];
-
-let preguntas_hechas = 0;
-let preguntas_correctas = 0;
-
-function escogerPreguntaAleatoria() {
-  let n;
-  if (preguntas_aleatorias) {
-    n = Math.floor(Math.random() * interprete_bp.length);
-  } else {
-    n = 0;
+  readText(ruta_local) {
+    var texto = null;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", ruta_local, false);
+    xmlhttp.send();
+    if (xmlhttp.status == 200) {
+      texto = xmlhttp.responseText;
+    }
+    return texto;
   }
+  interprete_bp;
+  constructor() {
+    var base_preguntas = this.readText("base-preguntas.json");
+    this.interprete_bp = JSON.parse(base_preguntas);
+    this.escogerPreguntaAleatoria();
+  };
+  
+  pregunta;
+  posibles_respuestas;
 
-  while (npreguntas.includes(n)) {
-    n++;
-    if (n >= interprete_bp.length) {
+  select_id(id) {
+    return document.getElementById(id);
+  }
+  btn_correspondiente = [
+    this.select_id("btn1"),
+    this.select_id("btn2"),
+    this.select_id("btn3"),
+    this.select_id("btn4"),
+    this.select_id("btn5")
+  ];
+  npreguntas = [];
+  
+  preguntas_hechas = 0;
+  preguntas_correctas = 0;
+  
+  escogerPreguntaAleatoria() {
+    let n;
+    if (this.preguntas_aleatorias) {
+      n = Math.floor(Math.random() * this.interprete_bp.length);
+    } else {
       n = 0;
     }
-    if (npreguntas.length == interprete_bp.length) {
-      //Aquí es donde el juego se reinicia
-      if (mostrar_pantalla_juego_términado) {
-        swal.fire({
-          title: "Juego finalizado",
-          text:
-            "Puntuación: " + preguntas_correctas + "/" + (preguntas_hechas - 1),
-          icon: "success"
-        });
+  
+    while (this.npreguntas.includes(n)) {
+      n++;
+      if (n >= this.interprete_bp.length) {
+        n = 0;
       }
-      if (reiniciar_puntos_al_reiniciar_el_juego) {
-        preguntas_correctas = 0
-        preguntas_hechas = 0
+      if (this.npreguntas.length == this.interprete_bp.length) {
+        //Aquí es donde el juego se reinicia
+        if (this.mostrar_pantalla_juego_términado) {
+          swal.fire({
+            title: "Juego finalizado",
+            text:
+              "Puntuación: " + this.preguntas_correctas + "/" + (this.preguntas_hechas - 1),
+            icon: "success"
+          });
+        }
+        if (reiniciar_puntos_al_reiniciar_el_juego) {
+          this.preguntas_correctas = 0
+          this.preguntas_hechas = 0
+        }
+        this.npreguntas = [];
       }
-      npreguntas = [];
+    }
+    this.npreguntas.push(n);
+    this.preguntas_hechas++;
+  
+    this.escogerPregunta(n);
+  }
+  
+  escogerPregunta(n) {
+    var pregunta = this.interprete_bp[n];
+    this.select_id("categoria").innerHTML="";
+    this.select_id("pregunta").innerHTML="";
+    if(pregunta.categoria){
+      this.select_id("categoria").innerHTML=pregunta.categoria;
+    }
+    if(pregunta.pregunta){
+      this.select_id("pregunta").innerHTML = pregunta.pregunta;
+    }
+    this.select_id("numero").innerHTML = n;
+    let pc = this.preguntas_correctas;
+    if (this.preguntas_hechas > 1) {
+      this.select_id("puntaje").innerHTML = pc + "/" + (this.preguntas_hechas - 1);
+    } else {
+      this.select_id("puntaje").innerHTML = "";
+    }
+  
+    this.style("imagen").objectFit = pregunta.objectFit;
+    this.desordenarRespuestas(pregunta);
+    if (pregunta.imagen) {
+      this.select_id("imagen").setAttribute("src", pregunta.imagen);
+      this.style("imagen").height = "200px";
+      this.style("imagen").width = "100%";
+    } else {
+      this.style("imagen").height = "0px";
+      this.style("imagen").width = "0px";
+      setTimeout(() => {
+        this.select_id("imagen").setAttribute("src", "");
+      }, 500);
     }
   }
-  npreguntas.push(n);
-  preguntas_hechas++;
-
-  escogerPregunta(n);
-}
-
-function escogerPregunta(n) {
-  pregunta = interprete_bp[n];
-  select_id("categoria").innerHTML = pregunta.categoria;
-  select_id("pregunta").innerHTML = pregunta.pregunta;
-  select_id("numero").innerHTML = n;
-  let pc = preguntas_correctas;
-  if (preguntas_hechas > 1) {
-    select_id("puntaje").innerHTML = pc + "/" + (preguntas_hechas - 1);
-  } else {
-    select_id("puntaje").innerHTML = "";
+  
+  desordenarRespuestas(pregunta) {
+      this.posibles_respuestas = [
+      pregunta.respuesta,
+      pregunta.incorrecta1,
+      pregunta.incorrecta2,
+      pregunta.incorrecta3,
+      pregunta.incorrecta4,
+    ];
+    this.posibles_respuestas.sort(() => Math.random() - 0.5);
+  
+    this.select_id("btn1").innerHTML = this.posibles_respuestas[0];
+    this.select_id("btn2").innerHTML = this.posibles_respuestas[1];
+    this.select_id("btn3").innerHTML = this.posibles_respuestas[2];
+    this.select_id("btn4").innerHTML = this.posibles_respuestas[3];
+    this.select_id("btn5").innerHTML = this.posibles_respuestas[4];
   }
+  
+  suspender_botones = false;
 
-  style("imagen").objectFit = pregunta.objectFit;
-  desordenarRespuestas(pregunta);
-  if (pregunta.imagen) {
-    select_id("imagen").setAttribute("src", pregunta.imagen);
-    style("imagen").height = "200px";
-    style("imagen").width = "100%";
-  } else {
-    style("imagen").height = "0px";
-    style("imagen").width = "0px";
+  oprimir_btn(i) {
+    if (this.suspender_botones) {
+      return;
+    }
+    this.suspender_botones = true;
+    if (this.posibles_respuestas[i] == pregunta.respuesta) {
+      preguntas_correctas++;
+      this.btn_correspondiente[i].style.background = "lightgreen";
+    } else {
+      this.btn_correspondiente[i].style.background = "pink";
+    }
+    for (let j = 0; j < 4; j++) {
+      if (this.posibles_respuestas[j] == pregunta.respuesta) {
+        btn_correspondiente[j].style.background = "lightgreen";
+        break;
+      }
+    }
     setTimeout(() => {
-      select_id("imagen").setAttribute("src", "");
-    }, 500);
+      this.reiniciar();
+      this.suspender_botones = false;
+    }, 3000);
   }
-}
-
-function desordenarRespuestas(pregunta) {
-    posibles_respuestas = [
-    pregunta.respuesta,
-    pregunta.incorrecta1,
-    pregunta.incorrecta2,
-    pregunta.incorrecta3,
-    pregunta.incorrecta4,
-  ];
-  posibles_respuestas.sort(() => Math.random() - 0.5);
-
-  select_id("btn1").innerHTML = posibles_respuestas[0];
-  select_id("btn2").innerHTML = posibles_respuestas[1];
-  select_id("btn3").innerHTML = posibles_respuestas[2];
-  select_id("btn4").innerHTML = posibles_respuestas[3];
-  select_id("btn5").innerHTML = posibles_respuestas[4];
-}
-
-let suspender_botones = false;
-
-function oprimir_btn(i) {
-  if (suspender_botones) {
-    return;
-  }
-  suspender_botones = true;
-  if (posibles_respuestas[i] == pregunta.respuesta) {
-    preguntas_correctas++;
-    btn_correspondiente[i].style.background = "lightgreen";
-  } else {
-    btn_correspondiente[i].style.background = "pink";
-  }
-  for (let j = 0; j < 4; j++) {
-    if (posibles_respuestas[j] == pregunta.respuesta) {
-      btn_correspondiente[j].style.background = "lightgreen";
-      break;
+  
+  // let p = prompt("numero")
+  
+  reiniciar() {
+    for (const btn of this.btn_correspondiente) {
+      btn.style.background = "white";
     }
+    this.escogerPreguntaAleatoria();
   }
-  setTimeout(() => {
-    reiniciar();
-    suspender_botones = false;
-  }, 3000);
-}
+  
 
-// let p = prompt("numero")
-
-function reiniciar() {
-  for (const btn of btn_correspondiente) {
-    btn.style.background = "white";
+  
+  style(id) {
+    return this.select_id(id).style;
   }
-  escogerPreguntaAleatoria();
-}
-
-function select_id(id) {
-  return document.getElementById(id);
-}
-
-function style(id) {
-  return select_id(id).style;
-}
-
-function readText(ruta_local) {
-  var texto = null;
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", ruta_local, false);
-  xmlhttp.send();
-  if (xmlhttp.status == 200) {
-    texto = xmlhttp.responseText;
-  }
-  return texto;
+  
+  
 }
