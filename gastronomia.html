@@ -14,66 +14,77 @@
       
    </head>
    <body>
-   		<header class="header">
-         <nav class="nav">
-            <button class="nav-toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu">
-               <li class="nav-menu-item">
-                  <a href="index.html" class="nav-menu-link nav-link">Página Principal</a>
+      <!-- Encabezado de la página -->
+      <header>
+         <nav>
+            <a href="index.html" style="margin-bottom: 5px; margin-top: 10px; margin-left: 20px">
+               <img src="multimedia/company_logo.jpg" style="width: 100px; height:60px; border-radius: 0.5rem;">
+            </a>
+            <ul>
+               <li>
+                  <a href="index.html">Página Principal</a>
                </li>
-               <li class="nav-menu-item">
-                  <a href="gastronomia.html" class="nav-menu-link nav-link">Gastronomía</a>
+               <li>
+                  <a href="gastronomia.html">Gastronomía</a>
                </li>
-               <li class="nav-menu-item">
-                  <a href="#" class="nav-menu-link nav-link">Rutas</a>
+               <li>
+                  <a href="#">Rutas</a>
                </li>
-               <li class="nav-menu-item">
-                  <a href="meteorologia.html" class="nav-menu-link nav-link">Meteorología</a>
+               <li>
+                  <a href="meteorologia.html">Meteorología</a>
                </li>
-               <li class="nav-menu-item">
-                  <a href="juego.html" class="nav-menu-link nav-link">Juego</a>
+               <li>
+                  <a href="juego.html">Juego</a>
                </li>
-               <li class="nav-menu-item">
-                  <a href="./php/registro.php" class="nav-menu-link nav-link">Reservas</a>
+               <li>
+                  <a href="./php/registro.php">Reservas</a>
                </li>
             </ul>
          </nav>
       </header>
+	
+	  	<section style="position: relative;">
+         <div>
+           <img src="multimedia/fondo-9.jpg" style="width:100%; height: 80vh;">
+         </div>
+      </section>
 
-
-		<section>
-		<div class="container">
-			
-		<div class="grip">
-			<h1>Gastronomía</h1>
-			<h2>¿Qué se puede comer en Coaña?</h2>
-			<!-- Lista ordenada -->
-			<ol>
-			  <li>Pescados (sargos, merluzas, lubinas,..)</li>
-			  <li>Mariscos procedentes del agitado Mar Cantábrico</li>
-			  <li>Carnes como la ternera asturiana, caza, pollo de aldea o "pitu de caleya"</li>
-			</ol>
-			<!-- Lista no ordenada -->
-			<h2>Combinación de alimentos</h2>
-			<ul>
-			  <li>Fabas con almejas</li>
-			  <li>Empanada de berberechos</li>
-			  <li>Fabas con jabalí</li>
-			  <li>Merluza con patatinas</li>
-			</ul>
-		</div>
+	<section>
+		<h2 style="margin-top: -5px">Gastronomía</h2>
 		<div>
-			<!-- Lista de definición -->
-			<h2>Postres</h2>
-			<dl>
-			  <dt>Queso de Abredo</dt>
-			  <dd>Se elabora en la quesería artesanal del pueblo de Abredo, el cuál goza de gran prestigio en todo el occidente</dd>
-			  <dt>Arroz con leche</dt>
-			  <dd>Se elabora con arroz bien cocido en leche, se le agrega canela y azúcar</dd>
-			</dl>
-		</div>
+			<div>
+				
+				<h3>¿Qué se puede comer en Coaña?</h3>
+				<!-- Lista ordenada -->
+				<ol>
+				  <li>Pescados (sargos, merluzas, lubinas,..)</li>
+				  <li>Mariscos procedentes del agitado Mar Cantábrico</li>
+				  <li>Carnes como la ternera asturiana, caza, pollo de aldea o "pitu de caleya"</li>
+				</ol>
+				<!-- Lista no ordenada -->
+
+				<h2>Combinación de alimentos</h2>
+
+				<ol>
+				  <li>Fabas con almejas</li>
+				  <li>Empanada de berberechos</li>
+				  <li>Fabas con jabalí</li>
+				  <li>Merluza con patatinas</li>
+				</ol>
+
+			</div>
+			<div>
+				<!-- Lista de definición -->
+				<h2>Postres</h2>
+
+				<dl>
+				  <dt>Queso de Abredo</dt>
+				  <dd>Se elabora en la quesería artesanal del pueblo de Abredo, el cuál goza de gran prestigio en todo el occidente</dd>
+				  <dt>Arroz con leche</dt>
+				  <dd>Se elabora con arroz bien cocido en leche, se le agrega canela y azúcar</dd>
+				</dl>
+
+			</div>
 		<div>	
 			<!-- Lista anidadas -->
 			<h2>Coaña es un municipio de mar y montaña</h2>
@@ -103,7 +114,7 @@
 	</section>
 	<section>
 
-		<div class="wrapper">
+		<div>
 
 			<!-- Tabla -->
 			<h2>¿Dónde comer?</h2>
@@ -140,53 +151,51 @@
 			  </tr>
 			</table>
 		</div>
-			<div class="img">
+			<div>
 				<picture>
 	  				<source media="(max-width: 799px)" srcset="./multimedia/comida1.jpg">
 	  				<source media="(min-width: 800px)" srcset="./multimedia/comida1.jpg">
-	  				<img src="./multimedia/comida1.jpg" alt="Comida de Coaña">
+	  				<img src="./multimedia/comida1.jpg" alt="Comida de Coaña" style="border-radius: 0.5rem">
 				</picture>
 				<picture>
 	  				<source media="(max-width: 799px)" srcset="./multimedia/comida2.jpg">
 	  				<source media="(min-width: 800px)" srcset="./multimedia/comida2.jpg">
-	  				<img src="./multimedia/comida2.jpg" alt="Comida de Coaña">
+	  				<img src="./multimedia/comida2.jpg" alt="Comida de Coaña" style="border-radius: 0.5rem">
 				</picture>
 			</div>
-			<div class="video">
-				<video width="320" height="240" controls>
+			<br>
+			<div>
+				<video width="1000" height="600" controls>
 				  <source src="./multimedia/gastronomia.mp4" type="video/mp4">
 				 </video>
 			</div>
-			<div class="audio">
+			<br>
+			<div>
 				<audio controls>
-				  <source src="audio.mp3" type="audio/mpeg">
+				  <source src="./multimedia/audio.mp3" type="audio/mpeg">
 				</audio>	
 			</div>	
 
         </section>
 
-
-        <footer class="footer-container">
-         <div class="footer-left">
-            <div class="footer-text">´PEC de Recuperación</div>
-            <hr class="footer-line">
-            <div class="copyright">© 2023 Coaña.</div>
-         </div>
-         <hr class="footer-line">
-         <div class="footer-right">
-            <div class="social-icons">Redes Sociales &nbsp;&nbsp;
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-instagram"></i></a>
-               <a href="#"><i class="fab fa-youtube"></i></a>
-               <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-            <hr class="footer-line">
-            <div class="footer-links">
-               <a href="#">Terms and Conditions</a>
-               <a href="#">Privacy Policy</a>
-               <a href="#">Cookies</a>
-            </div>
-         </div>
+      <footer>
+         <center>
+            <div>Proyecto web de Recuperación</div>
+            <hr>
+            <div>© 2023 Coaña.</div>
+         </center>
+         <hr>
+         <ol>
+         	<li>
+            	<a href="#">Terms and Conditions</a>
+            </li>
+            <li>
+            	<a href="#">Privacy Policy</a>
+            </li>
+            <li>
+            	<a href="#">Cookies</a>
+            </li>
+         </ol>
       </footer>
       <!-- Enlace a los archivos de script JS -->
       <script src="js/script.js"></script>
