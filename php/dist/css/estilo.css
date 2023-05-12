@@ -1,0 +1,10 @@
+body{
+	padding-top: 70px;
+	width:628px;
+    height:315px;
+    overflow:auto;
+}
+/* cambiar el color de fondo a la barra */
+nav.navbar {
+    background-color: #000000;
+}

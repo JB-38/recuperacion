@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Coaña</title>
+      <!-- Enlace a los archivos de estilo CSS -->
+      <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+      <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+      <!-- Enlace a la librería de iconos Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <!-- Mostrar y ocultar objetos -->
+      <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+      
+   </head>
+   <body>
+   		<header class="header">
+         <nav class="nav">
+            <button class="nav-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+               <li class="nav-menu-item">
+                  <a href="index.html" class="nav-menu-link nav-link">Página Principal</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="gastronomia.html" class="nav-menu-link nav-link">Gastronomía</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="#" class="nav-menu-link nav-link">Rutas</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="meteorologia.html" class="nav-menu-link nav-link">Meteorología</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="juego.html" class="nav-menu-link nav-link">Juego</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="./php/registro.php" class="nav-menu-link nav-link">Reservas</a>
+               </li>
+            </ul>
+         </nav>
+      </header>
+
+
+		<section>
+		<div class="container">
+			
+		<div class="grip">
+			<h1>Gastronomía</h1>
+			<h2>¿Qué se puede comer en Coaña?</h2>
+			<!-- Lista ordenada -->
+			<ol>
+			  <li>Pescados (sargos, merluzas, lubinas,..)</li>
+			  <li>Mariscos procedentes del agitado Mar Cantábrico</li>
+			  <li>Carnes como la ternera asturiana, caza, pollo de aldea o "pitu de caleya"</li>
+			</ol>
+			<!-- Lista no ordenada -->
+			<h2>Combinación de alimentos</h2>
+			<ul>
+			  <li>Fabas con almejas</li>
+			  <li>Empanada de berberechos</li>
+			  <li>Fabas con jabalí</li>
+			  <li>Merluza con patatinas</li>
+			</ul>
+		</div>
+		<div>
+			<!-- Lista de definición -->
+			<h2>Postres</h2>
+			<dl>
+			  <dt>Queso de Abredo</dt>
+			  <dd>Se elabora en la quesería artesanal del pueblo de Abredo, el cuál goza de gran prestigio en todo el occidente</dd>
+			  <dt>Arroz con leche</dt>
+			  <dd>Se elabora con arroz bien cocido en leche, se le agrega canela y azúcar</dd>
+			</dl>
+		</div>
+		<div>	
+			<!-- Lista anidadas -->
+			<h2>Coaña es un municipio de mar y montaña</h2>
+			<ul>
+			  <li>En la zona costera destacan los pescados como:</li>
+			    <ol>
+			      <li>Sargos</li>
+			      <li>Merluzas</li>
+			      <li>Lubinas</li>
+			    </ol>
+			  </li>
+			  <li>En la zona interior se come carnes como:</li>
+			  	<ol>
+			      <li>Ternera asturiana</li>
+			      <li>Caza</li>
+			      <li>Pollo de aldea</li>
+			    </ol>
+			  <li>En combinación de productos, se puede degustar en un solo plato</li>
+			  	<ol>
+			      <li>Fabas con almejas</li>
+			      <li>Empanada de berberechos</li>
+			      <li>Fabas con jabalí</li>
+			    </ol>
+			</ul>
+		</div>
+		</div>
+	</section>
+	<section>
+
+		<div class="wrapper">
+
+			<!-- Tabla -->
+			<h2>¿Dónde comer?</h2>
+
+			<table>
+			 <tr>
+				<th>Restaurante</th>
+			    <th>Dirección</th>
+			    <th>Teléfono</th>
+			  </tr>
+			  <tr>
+			    <td>Casa de Comidas A Retoral</td>
+			    <td>FC/ Real, s/n</td>
+			    <td>985 63 18 24 - 691 68 52 58</td>
+			    
+			  </tr>
+			  <tr>
+			    <td>El Capricho de Gonzalo</td>
+			    <td>Ctra. CÑ-6 km. 3.400</td>
+			    <td>985.47.36.43</td>
+			   
+			  </tr>
+			  <tr>
+			    <td>Bar Las Viñas</td>
+			    <td>Trelles, s/n</td>
+			    <td>985 47 39 71</td>
+			   
+			  </tr>
+			  <tr>
+			    <td>Hotel-Restaurante Mayce</td>
+			    <td>Ctra. N-634</td>
+			    <td>985 47 80 26 - 985 47 83 68</td>
+			   
+			  </tr>
+			</table>
+		</div>
+			<div class="img">
+				<picture>
+	  				<source media="(max-width: 799px)" srcset="./multimedia/comida1.jpg">
+	  				<source media="(min-width: 800px)" srcset="./multimedia/comida1.jpg">
+	  				<img src="./multimedia/comida1.jpg" alt="Comida de Coaña">
+				</picture>
+				<picture>
+	  				<source media="(max-width: 799px)" srcset="./multimedia/comida2.jpg">
+	  				<source media="(min-width: 800px)" srcset="./multimedia/comida2.jpg">
+	  				<img src="./multimedia/comida2.jpg" alt="Comida de Coaña">
+				</picture>
+			</div>
+			<div class="video">
+				<video width="320" height="240" controls>
+				  <source src="./multimedia/gastronomia.mp4" type="video/mp4">
+				 </video>
+			</div>
+			<div class="audio">
+				<audio controls>
+				  <source src="audio.mp3" type="audio/mpeg">
+				</audio>	
+			</div>	
+
+        </section>
+
+
+        <footer class="footer-container">
+         <div class="footer-left">
+            <div class="footer-text">´PEC de Recuperación</div>
+            <hr class="footer-line">
+            <div class="copyright">© 2023 Coaña.</div>
+         </div>
+         <hr class="footer-line">
+         <div class="footer-right">
+            <div class="social-icons">Redes Sociales &nbsp;&nbsp;
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-instagram"></i></a>
+               <a href="#"><i class="fab fa-youtube"></i></a>
+               <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <hr class="footer-line">
+            <div class="footer-links">
+               <a href="#">Terms and Conditions</a>
+               <a href="#">Privacy Policy</a>
+               <a href="#">Cookies</a>
+            </div>
+         </div>
+      </footer>
+      <!-- Enlace a los archivos de script JS -->
+      <script src="js/script.js"></script>
+   </body>
+</html>

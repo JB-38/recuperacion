@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Juego de preguntas Coaña</title>
+  <link rel="stylesheet" type="text/css" href="./estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="./estilo/layout.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+  <header class="header">
+         <nav class="nav">
+            <button class="nav-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+               <li class="nav-menu-item">
+                  <a href="index.html" class="nav-menu-link nav-link">Página Principal</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="gastronomia.html" class="nav-menu-link nav-link">Gastronomía</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="#" class="nav-menu-link nav-link">Rutas</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="meteorologia.html" class="nav-menu-link nav-link">Meteorología</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="juego.html" class="nav-menu-link nav-link">Juego</a>
+               </li>
+               <li class="nav-menu-item">
+                  <a href="./php/registro.php" class="nav-menu-link nav-link">Reservas</a>
+               </li>
+            </ul>
+         </nav>
+      </header>
+
+  <div class="contenedor">
+    <div class="puntaje" id="puntaje"></div>
+    <div class="encabezado">
+      <div class="categoria" id="categoria">
+      </div>
+      <div class="numero" id="numero"></div>
+      <div class="pregunta" id="pregunta">
+      </div>
+      <img src="#" class="imagen" id="imagen">
+    </div>
+    <div class="btn" id="btn1" onclick="oprimir_btn(0)"></div>
+    <div class="btn" id="btn2" onclick="oprimir_btn(1)"></div>
+    <div class="btn" id="btn3" onclick="oprimir_btn(2)"></div>
+    <div class="btn" id="btn4" onclick="oprimir_btn(3)"></div>
+    <div class="btn" id="btn5" onclick="oprimir_btn(4)"></div>
+
+    <div class="btn"><a href="index.html">Volver</a></div>
+    
+    <script src="js/juego.js"></script>
+  </div>
+
+</body></html>
