@@ -7,101 +7,38 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link rel="icon" type="image/jfif" href="dist/img/balon.jfif"/>
-   
-
- 
+  <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+        <!-- Encabezado de la página -->
+      <header>
+         <nav style="display: flex;">
+            <a href="index.html" style="margin-bottom: 5px; margin-top: 10px; margin-left: 20px">
+               <img src="../multimedia/company_logo.jpg" style="width: 100px; height:60px; border-radius: 0.5rem;">
+            </a>
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.html" class="nav-link">Inicio</a>
-      </li>
-    </ul>
+            <ul style="display: flex;">
+               <li style="display: flex">
+                  <a style="margin: auto;" href="./reservas.php">Menu Administrador</a>
+               </li>
+               <li style="display: flex">
+                  <a style="margin: auto;" href="./reservas.php">Recursos</a>
+               </li>
+               <li style="display: flex">
+                  <a style="margin: auto;" href="./presupuesto.php">Presupuesto</a>
+               </li>
+               <li style="display: flex">
+                  <a style="margin: auto;" href="./registro.php">Usuarios</a>
+               </li>
 
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="../index.html" class="brand-link">
-      <img src="dist/img/avatar3.png" alt="Reservas" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">Reservas</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Menú Administrador</a>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="./registro.php" class="nav-link">
-              <i class="fas fa-users nav-icon"></i>
-              <p>Usuarios</p>
-             </a></li>
-              
-              <li class="nav-item">
-                <a href="./reservas.php" class="nav-link">
-                  <i class="fas fa-ring nav-icon"></i>
-                  <p>Recursos</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./presupuesto.php" class="nav-link">
-                  <i class="fas fa-chart-line nav-icon"></i>
-                  <p>Presupuesto</p>
-                </a>
+              <li style="display: flex;text-align:center;">
+                <div>
+                  <img src="dist/img/avatar5.png" width="50" style="border-radius: 50%;" alt="User Image">
+                </div>
               </li>
             </ul>
-          </li>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+         </nav>
+      </header>
   </body>
   </html>
