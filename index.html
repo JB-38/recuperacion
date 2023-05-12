@@ -70,17 +70,17 @@
                     <h1 style="margin-top: 10px;margin-bottom: 5px;"><strong>Castro de Coaña</strong></h1>
                   </div>
 
-                  <a name="prev" onclick="plusSlides(-1)">❮</a>
-                  <a name="next" onclick="plusSlides(1)">❯</a>
+                  <a name="prev" onclick="diapositiva.plusSlides(-1)">❮</a>
+                  <a name="next" onclick="diapositiva.plusSlides(1)">❯</a>
             </section>
             <br>
 
             <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span> 
-              <span class="dot" onclick="currentSlide(2)"></span> 
-              <span class="dot" onclick="currentSlide(3)"></span> 
-              <span class="dot" onclick="currentSlide(4)"></span> 
-              <span class="dot" onclick="currentSlide(5)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(1)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(2)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(3)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(4)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(5)"></span> 
               <br><br>
             </div>
          </main>
@@ -127,61 +127,8 @@
          </section>
 
          <section>
-            <center style="float:center; color: white; font-weight: bold;">
-               <script>
-               //<![CDATA[
-               var  today = new Date();
-               var m = today.getMonth() + 1;
-               var mes = (m < 10) ? '0' + m : m;
-                 document.write('Fecha: '+today.getDate(),'/' +mes,'/'+today.getYear());
-               //]]> 
-               </script>
+            <center style="float:center; color: white; font-weight: bold;" id="fechaDiaActual">
             </center>   
-
-            <script>
-               let slideIndex = 1;
-               showSlides(slideIndex);
-
-               function plusSlides(n) {
-                 showSlides(slideIndex += n);
-               }
-
-               function currentSlide(n) {
-                 showSlides(slideIndex = n);
-               }
-
-               function showSlides(n) {
-                 let i;
-                 let slides = document.getElementsByClassName("mySlides");
-                 let dots = document.getElementsByClassName("dot");
-                 if (n > slides.length) {slideIndex = 1}    
-                 if (n < 1) {slideIndex = slides.length}
-                 for (i = 0; i < slides.length; i++) {
-                   slides[i].style.display = "none";  
-                 }
-                 for (i = 0; i < dots.length; i++) {
-                   dots[i].name = dots[i].setAttribute("name", "");
-                 }
-                 slides[slideIndex-1].style.display = "block";  
-                 dots[slideIndex-1].setAttribute("name", "active");
-               }
-            </script>
-
-            <script>
-               function startTime(){
-               today=new Date();
-               h=today.getHours();
-               m=today.getMinutes();
-               s=today.getSeconds();
-               m=checkTime(m);
-               s=checkTime(s);
-               document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
-               t=setTimeout('startTime()',500);}
-               function checkTime(i)
-               {if (i<10) {i="0" + i;}return i;}
-               window.onload=function(){startTime();}
-               </script>
-
                <div id="reloj" style="font-size:20px; color:white; font-weight: bold;"></div>    
          </section>
 
@@ -206,5 +153,8 @@
       </footer>
       <!-- Enlace a los archivos de script JS -->
       <script src="js/script.js"></script>
+      <script>
+         const diapositiva = new Diapositiva();
+         </script>
    </body>
 </html>
