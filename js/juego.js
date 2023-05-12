@@ -61,7 +61,7 @@ class Juego{
             icon: "success"
           });
         }
-        if (reiniciar_puntos_al_reiniciar_el_juego) {
+        if (this.reiniciar_puntos_al_reiniciar_el_juego) {
           this.preguntas_correctas = 0
           this.preguntas_hechas = 0
         }
@@ -75,14 +75,14 @@ class Juego{
   }
   
   escogerPregunta(n) {
-    var pregunta = this.interprete_bp[n];
+    this.pregunta = this.interprete_bp[n];
     this.select_id("categoria").innerHTML="";
     this.select_id("pregunta").innerHTML="";
-    if(pregunta.categoria){
-      this.select_id("categoria").innerHTML=pregunta.categoria;
+    if(this.pregunta.categoria){
+      this.select_id("categoria").innerHTML=this.pregunta.categoria;
     }
-    if(pregunta.pregunta){
-      this.select_id("pregunta").innerHTML = pregunta.pregunta;
+    if(this.pregunta.pregunta){
+      this.select_id("pregunta").innerHTML = this.pregunta.pregunta;
     }
     this.select_id("numero").innerHTML = n;
     let pc = this.preguntas_correctas;
@@ -92,10 +92,10 @@ class Juego{
       this.select_id("puntaje").innerHTML = "";
     }
   
-    this.style("imagen").objectFit = pregunta.objectFit;
-    this.desordenarRespuestas(pregunta);
-    if (pregunta.imagen) {
-      this.select_id("imagen").setAttribute("src", pregunta.imagen);
+    this.style("imagen").objectFit = this.pregunta.objectFit;
+    this.desordenarRespuestas(this.pregunta);
+    if (this.pregunta.imagen) {
+      this.select_id("imagen").setAttribute("src", this.pregunta.imagen);
       this.style("imagen").height = "200px";
       this.style("imagen").width = "100%";
     } else {
@@ -131,15 +131,15 @@ class Juego{
       return;
     }
     this.suspender_botones = true;
-    if (this.posibles_respuestas[i] == pregunta.respuesta) {
-      preguntas_correctas++;
+    if (this.posibles_respuestas[i] == this.pregunta.respuesta) {
+      this.preguntas_correctas++;
       this.btn_correspondiente[i].style.background = "lightgreen";
     } else {
       this.btn_correspondiente[i].style.background = "pink";
     }
     for (let j = 0; j < 4; j++) {
-      if (this.posibles_respuestas[j] == pregunta.respuesta) {
-        btn_correspondiente[j].style.background = "lightgreen";
+      if (this.posibles_respuestas[j] == this.pregunta.respuesta) {
+        this.btn_correspondiente[j].style.background = "lightgreen";
         break;
       }
     }
