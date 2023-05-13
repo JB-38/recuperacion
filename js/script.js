@@ -2,7 +2,6 @@ class Diapositiva {
   slideIndex = 1;
 
   startTime(){
-    console.log("aaa");
     var today=new Date();
     var h=today.getHours();
     var m=today.getMinutes();

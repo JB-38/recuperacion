@@ -16,7 +16,7 @@
    <body>
       <!-- Encabezado de la página -->
       <!-- Encabezado de la página -->
-         <header>
+         <header style="position: relative">
             <nav>
                <a href="index.html" style="margin-bottom: 5px; margin-top: 10px; margin-left: 20px">
                   <img src="multimedia/company_logo.jpg" style="width: 100px; height:60px; border-radius: 0.5rem;">
@@ -44,25 +44,23 @@
             </nav>
          </header>
          <section>
-            <h2>El tiempo de hoy en Coaña</h2>
-            <br>
-               <div id="tiempo_53f4e9ca5814a14e1842468c051e8998" name="time"> <div></div>
-               <div> 
-                  <img src="//www.tiempo.es/build/img/logo/tiempo133.png" width="300" height="50" alt="tiempo.es"> 
-               </div> 
-               <script type="text/javascript" src="//www.tiempo.es/widload/es/ver/520/344/110/es0as0018/53f4e9ca5814a14e1842468c051e8998.js"></script>
-            </div>
-            <br>
-
             <div>
-               <h2>Situación del Concejo de Coaña</h2>
+               <h2>Rutas disponibles</h2>
                <br>
-               <picture>
-                  <source media="(max-width: 799px)" srcset="./multimedia/Situacion_Coana.jpg">
-                  <source media="(min-width: 800px)" srcset="./multimedia/Situacion_Coana.jpg">
-                  <img src="./multimedia/Situacion_Coana.jpg" width="620" alt="Comida de Coaña" style="border-radius: 0.5rem;">
-               </picture>
-               <br><br>
+               <div id="ruta1">
+               </div>
+               <br>
+               <div id="ruta2">
+               </div>
+               <br>
+               <div id="ruta3">
+               </div>
+               <br>
+               <script src="js/rutas.js"></script>
+               <script>
+                  const rutas = new Rutas();
+               </script>
+               
             </div>
          </section>
    </body>

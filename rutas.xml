@@ -1,0 +1,177 @@
+<rutas>
+    <ruta> 
+        <nombre>Ruta de los molinos</nombre> 
+        <tipo_ruta>Arquitectura </tipo_ruta>
+        <medio_transporte>vehiculo </medio_transporte>
+        <fecha_inicio>05-05-2023 </fecha_inicio>
+        <hora_inicio>08:00 </hora_inicio>
+        <duracion>4 horas </duracion>
+        <agencia>Sin agencia </agencia>
+        <descripcion>Pase por las arquitecturas increibles de los 12 molinos </descripcion>
+        <personas_adecuadas>Se puede ir con niños </personas_adecuadas>
+        <lugar_inicio>Toledo </lugar_inicio>
+        <direccion_inicio>Consuegra </direccion_inicio>
+        <latitud_geografica>39.4605 </latitud_geografica>
+        <longitud_geograficas>-3.60672 </longitud_geograficas>
+        <recomendacion>si se llevan niños, se recomiendan que sean mayores de 10 años </recomendacion> 
+        <referencia>https://www.motorpasion.com/otros/ruta-molinos-castilla-mancha </referencia>
+        <referencia>https://www.tuscasasrurales.com/blog/ruta-molinos-de-viento-la-mancha-quijote/ </referencia>
+        <referencia>mibauldeblogs.com/ruta-molinos-de-viento-la-mancha/ </referencia>
+        <hito>
+            <nombre>Molino de mayor tamaño </nombre>
+            <descripcion>Disfrute del molino de mayor tamaño </descripcion>
+            <latitud_geog>39.4605 </latitud_geog>
+            <longitud_geog>-3.60680 </longitud_geog>
+            <distancia_entre_hito_anterior>0 </distancia_entre_hito_anterior>
+            <fotografia></fotografia>
+            <fotografia></fotografia>
+            <fotografia></fotografia>
+            <video></video>
+            <video></video>
+            <video></video>
+            </hito>
+            <hito> 
+                <nombre>Molino más alto </nombre>
+                <descripcion>Disfrute el molino a mayor altura, con vista espectacular </descripcion>
+                <latitud_geog>39.4604 </latitud_geog>
+                <longitud_geog>-3.60686 </longitud_geog>
+                <distancia_entre_hito_anterior>50m </distancia_entre_hito_anterior>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
+            </hito>
+            <hito> 
+                <nombre>Molino más antiguo </nombre>
+                <descripcion> Disfrute del molino más antiguo y mejor conservado </descripcion> 
+                <latitud_geog> 39.4603 </latitud_geog>
+                <longitud_geog> -3.6090 </longitud_geog>
+                <distancia_entre_hito_anterior>100m </distancia_entre_hito_anterior>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
+            </hito>
+    </ruta>
+
+    <ruta> 
+        <nombre>Sierra Nevada de Guadix a Lanjarón</nombre> 
+        <tipo_ruta>Paisajistica</tipo_ruta>
+        <medio_transporte>Bicicleta </medio_transporte>
+        <fecha_inicio>15-05-2023 </fecha_inicio>
+        <hora_inicio>12:00 </hora_inicio>
+        <duracion>4 horas </duracion>
+        <agencia>NaturAller </agencia>
+        <descripcion>Disfruta de unos paisajes increibles </descripcion>
+        <personas_adecuadas>Cualquier persona</personas_adecuadas>
+        <lugar_inicio>Guadix </lugar_inicio>
+        <direccion_inicio>Granada Guadix </direccion_inicio>
+        <latitud_geografica>37.101166 </latitud_geografica>
+        <longitud_geograficas>-3.60672 </longitud_geograficas>
+        <recomendacion>Ir acompañado de familiares o amigos </recomendacion> 
+        <referencia>https://www.motorpasion.com/otros/17-mejores-rutas-espana-que-perderte-coche </referencia>
+        <referencia>https://es.wikiloc.com/rutas-ciclismo/vuelta-a-sierra-nevada-desde-guadix-53493437 </referencia>
+        <referencia>https://www.distanciasentreciudades.com/distancia-lanjaron-a-guadix </referencia>
+        <hito>
+            <nombre>Catedral de Guadix </nombre>
+            <descripcion>Catedral iconica de Guadix </descripcion>
+            <latitud_geog>37.101165 </latitud_geog>
+            <longitud_geog>-3.240442</longitud_geog>
+            <distancia_entre_hito_anterior>0m </distancia_entre_hito_anterior>
+            <fotografia></fotografia>
+            <fotografia></fotografia>
+            <fotografia></fotografia>
+            <video></video>
+            <video></video>
+            <video></video>
+            </hito>
+            <hito> 
+                <nombre>Puerto de Santillana </nombre>
+                <descripcion>Espectacular vista </descripcion>
+                <latitud_geog>37.101163 </latitud_geog>
+                <longitud_geog>-3.240443 </longitud_geog>
+                <distancia_entre_hito_anterior>50km </distancia_entre_hito_anterior>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
+            </hito>
+            <hito> 
+                <nombre>Bubión </nombre>
+                <descripcion> Lugar increible</descripcion> 
+                <latitud_geog> 37.101111 </latitud_geog>
+                <longitud_geog> -3.247444 </longitud_geog>
+                <distancia_entre_hito_anterior>100km </distancia_entre_hito_anterior>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
+            </hito>
+    </ruta>
+    <ruta> 
+        <nombre>Aragón</nombre> 
+        <tipo_ruta>Paisajistica </tipo_ruta>
+        <medio_transporte>A pie </medio_transporte>
+        <fecha_inicio>01-06-2023 </fecha_inicio>
+        <hora_inicio>09:00 </hora_inicio>
+        <duracion>3 horas </duracion>
+        <agencia>Sin agencia </agencia>
+        <descripcion>Familiar y amigos </descripcion>
+        <personas_adecuadas>Se puede ir con niños </personas_adecuadas>
+        <lugar_inicio>Alcorisa </lugar_inicio>
+        <direccion_inicio>Alcorisa Teruel</direccion_inicio>
+        <latitud_geografica>37.201111 </latitud_geografica>
+        <longitud_geograficas>-3.347444 </longitud_geograficas>
+        <recomendacion>si se llevan niños, se recomiendan estar muy atentos </recomendacion> 
+        <referencia>https://www.motorpasion.com/otros/ruta-molinos-castilla-mancha </referencia>
+        <referencia>https://www.minube.com/rincon/embalse-de-la-estanca-a2212663 </referencia>
+        <referencia>https://www.iagua.es/data/infraestructuras/embalses/estanca-alcaniz </referencia>
+        <hito>
+            <nombre>Embalse la estanca-alcaniz </nombre>
+            <descripcion>Disfrute de la vista </descripcion>
+            <latitud_geog>39.4305 </latitud_geog>
+            <longitud_geog>-3.30680 </longitud_geog>
+            <distancia_entre_hito_anterior>0m </distancia_entre_hito_anterior>
+            <fotografia></fotografia>
+            <fotografia></fotografia>
+            <fotografia></fotografia>
+            <video></video>
+            <video></video>
+            <video></video>
+            </hito>
+            <hito> 
+                <nombre>Mirador Valle arriba </nombre>
+                <descripcion>Disfrute de la vista del embalse </descripcion>
+                <latitud_geog>39.4704 </latitud_geog>
+                <longitud_geog>-3.50486 </longitud_geog>
+                <distancia_entre_hito_anterior>300m </distancia_entre_hito_anterior>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
+            </hito>
+            <hito> 
+                <nombre>Cascada Argon </nombre>
+                <descripcion> Disfrute del relajante sonido del agua </descripcion> 
+                <latitud_geog> 39.4653 </latitud_geog>
+                <longitud_geog> -3.2490 </longitud_geog>
+                <distancia_entre_hito_anterior>500m </distancia_entre_hito_anterior>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
+            </hito>
+    </ruta>
+</rutas>
