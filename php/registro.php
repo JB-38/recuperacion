@@ -1,3 +1,8 @@
+<?php
+require __DIR__ . "/nexo/nexo.php";
+LoginController::isAuth();
+?>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -7,13 +12,11 @@
   <!-- Enlace a los archivos de estilo CSS -->
   <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
   <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body>
+<body style="background: white;">
        <header>
           <nav style="display: flex;">
              <a href="../index.html" style="margin-bottom: 5px; margin-top: 10px; margin-left: 20px">
@@ -43,46 +46,34 @@
        </header>
 <?php
 
-  require 'conexion.php';
+  $error = '';
+  if(!empty($_POST)){
+      $postdata = [
+         'usuario' => $_POST['usuario'],
+         'nombre' => $_POST['nombre'],
+         'apellido' => $_POST['apellido'],
+         'telefono' => $_POST['telefono'],
+         'direccion' => $_POST['direccion'],
+         'clave' => $_POST['clave']
+     ];
 
-  $message = '';
+     $userController = new UserController();
+     $result = $userController->setUsers($postdata);
+     $result = json_decode($result);
 
-  if (!empty($_POST['usuario']) && !empty($_POST['clave'])) {
-
-    $usuario = $_POST['usuario'];
-    $records = $conexion->prepare('SELECT usuario FROM usuarios WHERE usuario = :usuario');
-    $records->bindParam(':usuario', $_POST['usuario']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-    
-    
-    if (empty($results)){
-      $sql = "INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`, `apellido`,`telefono`, `direccion`) VALUES (:usuario, :clave, :nombre, :apellido, :telefono, :direccion)";
-      $stmt = $conexion->prepare($sql);
-      $stmt->bindParam(':usuario', $_POST['usuario']);
-      $stmt->bindParam(':clave', $_POST['clave']);
-      $stmt->bindParam(':nombre', $_POST['nombre']);
-      $stmt->bindParam(':apellido', $_POST['apellido']);
-      $stmt->bindParam(':telefono', $_POST['telefono']);
-      $stmt->bindParam(':direccion', $_POST['direccion']);
-      
-      if ($stmt->execute()) {
-        $message = 'Nuevo usuario creado con éxito';
-      } else {
-        $message = 'Lo sentimos, debe haber habido un problema al crear su cuenta';
-      }
-  }else{
-    $message = 'Este usuario ya se encuentra en la base de datos';
+     $error = $userController->goToHome($result, $_POST['usuario']);
   }
-  }
-   if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
+?>
      <section name="separator">
           <div style="width: 100%; padding-left: 30%; padding-right: 30%;">
             <div style="border: 1px solid #e7e4e4; border-radius: 0.5rem">
               <div style="padding: 1.25rem;">
                   <h1>Registrate</h1>
+                  <?php if(!empty($error)){ ?>
+                     <br>
+                     <h5 style="background: #d5b3bb;padding: 10px;border-radius: 0.5rem; color: black"><?= $error ?></h5>
+                     <br>
+                  <?php } ?>
                    <div>
                       <form action="registro.php" method="POST">
                         <input name="usuario" type="text" placeholder="Ingresa tú usuario"> <br>

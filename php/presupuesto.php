@@ -1,18 +1,18 @@
 <?php 
-session_start();
-$usu=$_SESSION['usuario'];
-
 include_once "encabezado.html";
-include_once "conexion.php";
-$sentencia = $conexion->query("SELECT usuarios.nombre, usuarios.apellido, presupuestos.*, recursos.descripcion, recursos.precio, reservas.cantidad, reservas.fecha, reservas.hora FROM usuarios INNER JOIN presupuestos ON usuarios.usuario=presupuestos.usuario INNER JOIN reservas ON presupuestos.usuario=reservas.usuario, recursos  WHERE  presupuestos.usuario = '$usu'  ORDER BY descripcion;");
-//$sentencia->execute([$usu]);
-$data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-if($data === FALSE){
-    echo "¡No existe ningún registro con ese ID!";
-    exit();
+require __DIR__ . "/nexo/nexo.php";
+LoginController::userAuth();
+
+if(!empty($_SESSION['usuario'])){
+  $reserveController = new ReserveController();
+  $data = json_decode($reserveController->getBudgets($_SESSION['usuario']));
+}else{
+  $data = null;
 }
-$total=0;
+
 ?>
+
+<?php if(!empty($data)){ ?>
     <!-- Main content -->
     <section name="separator-admin">
 
@@ -43,19 +43,20 @@ $total=0;
                               <tbody>
                                 <tr>
                                   
-                          <?php                            
+                          <?php               
+                                  $total = 0;             
                                   foreach($data as $dat) {                                                        
                             ?>
-                                      <td><?php echo $dat['nombre']." ".$dat['apellido'] ?></td>
-                                      <td><?php echo $dat['descripcion'] ?></td>
-                                      <td><?php echo $dat['cantidad'] ?></td>  
-                                      <td><?php echo $dat['fecha'] ?></td> 
-                                      <td><?php echo $dat['hora'] ?></td> 
-                                      <td><?php echo $dat['precio'] ?></td>  
+                                      <td><?php echo $dat->nombre ." ". $dat->apellido  ?></td>
+                                      <td><?php echo $dat->descripcion  ?></td>
+                                      <td><?php echo $dat->cantidad  ?></td>  
+                                      <td><?php echo $dat->fecha  ?></td> 
+                                      <td><?php echo $dat->hora  ?></td> 
+                                      <td><?php echo $dat->precio  ?></td>  
                                          
                                   </tr>
                                   <?php
-                                      $total=$total+$dat['precio'];
+                                      $total=$total+$dat->precio;
                                       } 
                                   ?>                                
                               </tbody>   
@@ -75,3 +76,11 @@ $total=0;
             <!-- /.card -->
     </div>
 </section>
+
+<?php }else{ ?>
+       <!-- Main content -->
+    <section name="separator-admin">
+        <h2><span style="color:red">Error: </span> Se necesita un identificador para poder ver el presupuesto o la información que esta buscando ya no existe.</h2> <br>
+        <a type="back" href="./reservas.php">Volver</a>
+    </section>
+<?php } ?>

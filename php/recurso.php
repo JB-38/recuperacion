@@ -1,13 +1,16 @@
-<?php include_once "./encabezado.html" ?>
+<?php
+include_once "./encabezado.html";
+require __DIR__ . "/nexo/nexo.php";
+LoginController::userAuth();
 
-<?php 
-    require "conexion.php";
+$typeController = new TypeController();
+$types = json_decode($typeController->getTypes());
 ?>
 
     <!-- Main content -->
     <section name="separator">
           <!-- left column -->
-          <div style="width: 100%; padding-left: 30%; padding-right: 30%;">
+          <div type="modal">
             <!-- jquery validation -->
             <div style="border: 1px solid #e7e4e4; border-radius: 0.5rem; background: white;">
               <div>
@@ -16,8 +19,6 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form role="form" id="quickForm" method="post" action="nuevo_recurso.php" style="padding: 20px"> 
-                <div class="card-body">
-                  <div class="form-group">
                     <label for="nombre">Descripción</label>
                     <input type="text" name="descripcion" required  placeholder="Descripción del recurso">
                     <label for="direccion">Límite ocupantes</label>
@@ -27,23 +28,13 @@
                     <input type="text"name="precio" required  placeholder="Precio del recurso">
                     <label for="etiqueta">Tipo de recurso</label>
                     <select name="tipo">
-                        <?php 
-                        $sentencia = $conexion->query("SELECT * FROM  tipos;");
-                        $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-                        foreach($data as $dat) {   
-                            $id=$dat["id"];
-                            $tipo=$dat["tipo"];
-                        ?>
-                         
-                          <option value=""></option>
-                          <option value="<?php echo $id?>"><?php echo $tipo?></option>
-                        <?php
-                        }
-                        ?>
+                        <option value="" selected> Seleccione un tipo turistico</option>
+                        
+                      <?php foreach($types as $dat) {   ?>
+                        <option value="<?= $dat->id ?>"><?= $dat->tipo ?></option>
+                      <?php } ?>
+
                     </select>   
-                  </div>
-                  
-                </div>
                 <br>
                 <!-- /.card-body -->
                 <div>

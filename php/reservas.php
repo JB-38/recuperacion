@@ -1,10 +1,10 @@
 <?php 
-session_start();
-$usu=$_SESSION['usuario'];
 include_once "./encabezado.html";
-include_once "conexion.php";
-$sentencia = $conexion->query("SELECT * FROM `recursos`;");
-$data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+require __DIR__ . "/nexo/nexo.php";
+LoginController::userAuth();
+
+$resourceController = new ResourceController();
+$resources = json_decode($resourceController->getResources());
 ?>
 <head>
   <meta charset="utf-8">
@@ -27,11 +27,16 @@ $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
               <div>
                 <h1>Datos de los Recursos</h1>
               </div>
+              
+              <?php if(!empty($_GET['failed'])){ ?>
+                    <h2 style="background: #f5d5d5; padding: 10px; color: black;"><?= json_decode($_GET['failed']) ?></h2>
+              <?php } ?>
+
               <div style="padding: 2%;">
                 <div style="text-align: left; margin-bottom: 10px">
                   <a type="button" href="./recurso.php">Nuevo <i class="fa fa-plus"></i></a>
                 </div>
-                <table>
+                <table id="tablas">
                   <thead>
                     <tr>
                         <th>Id</th> 
@@ -44,18 +49,20 @@ $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                   </thead>
                         <tbody>
                             <?php                            
-                            foreach($data as $dat) {                                                        
+                            foreach($resources as $dat) {                                                        
                             ?>
                             <tr>
-                                <td><?php echo $dat['id'] ?></td> 
-                                <td><?php echo $dat['descripcion'] ?></td>
-                                <td><?php echo $dat['limite'] ?></td>  
-                                <td><?php echo $dat['precio'] ?></td>  
-                                <td><?php echo $dat['id_tipo'] ?></td>    
+                                <td><?= $dat->id  ?></td> 
+                                <td><?= $dat->descripcion  ?></td>
+                                <td><?= $dat->limite  ?></td>  
+                                <td><?= $dat->precio  ?></td>  
+                                <td><?= $dat->id_tipo  ?></td>    
                     
-                                <td><a type="button" href="<?php echo "./reservar.php?id=" . $dat['id']?>">
+                                <td>
+                                  <a type="button" href="<?= "./reservar.php?id=" . $dat->id ?>">
                                       Reservar
-                                    </a></td>
+                                  </a>
+                                </td>
                             </tr>
                             <?php
                                 } 
@@ -106,11 +113,13 @@ $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     $('#tablas').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
       "ordering": true,
       "info": true,
-      "autoWidth": false,
-      "responsive": true,
+      "destroy": true,
+      "order": [[ 3, "desc" ]],
+      "language": {
+              "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+      }
     });
   });
 </script>

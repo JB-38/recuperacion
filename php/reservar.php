@@ -1,25 +1,17 @@
 <?php
-
-session_start();
-$usu=$_SESSION['usuario'];
-
 include_once "./encabezado.html";
+require __DIR__ . "/nexo/nexo.php";
+LoginController::userAuth();
 
-if(!isset($_GET["id"])) exit();
-
-$id = $_GET["id"];
-
-include_once "conexion.php";
-$sentencia = $conexion->query("SELECT * FROM recursos WHERE id = '$id';");
-$sentencia->execute();
-$data = $sentencia->fetch(PDO::FETCH_OBJ);
-if($data === FALSE){
-	echo "¡No existe ningún registro con ese ID!";
-	exit();
+if(!empty($_GET)){
+  $resourceController = new ResourceController();
+  $data = json_decode($resourceController->getResources($_GET["id"]));
+}else{
+  $data = null;
 }
-
 ?>
 
+<?php if(!empty($data)){ ?>
      <!-- Main content -->
      <section name="separator-admin">
       <h2>Reservaciones</h2>
@@ -37,14 +29,14 @@ if($data === FALSE){
               <form role="form" id="quickForm" method="post" action="abm_reservar.php" style="padding: 20px"> 
                 <div>
                   <div>
-                      <input type="hidden" name="id" value="<?php echo $data->id; ?>">
+                      <input type="hidden" name="id" value="<?php echo $data[0]->id; ?>">
 
                       <label for="nombre">Recurso</label>
-                      <input type="text" value="<?php echo $data->descripcion ?>" name="descripcion" readonly>
+                      <input type="text" value="<?php echo $data[0]->descripcion ?>" name="descripcion" readonly>
                       <label>Precio</label>
-                      <input type="text" value="<?php echo $data->precio ?>" name="precio" readonly>
+                      <input type="text" value="<?php echo $data[0]->precio ?>" name="precio" readonly>
                       <label>Límite de ocupantes</label>
-                      <input type="number" value="<?php echo $data->limite ?>" name="limite" readonly>
+                      <input type="number" value="<?php echo $data[0]->limite ?>" name="limite" readonly>
                       <label>Cantidad de ocupantes a reservar</label>
                       <input type="number" name="cantidad" required="">
                       <label>Fecha de reservación</label>
@@ -56,7 +48,7 @@ if($data === FALSE){
                 </div>
                 <!-- /.card-body -->
                 <br>
-                <div class="card-footer">
+                <div>
                   <input type="submit" value="Reservar">
                   <a type="back" href="./reservas.php">Cancelar</a>
                 </div>
@@ -72,3 +64,10 @@ if($data === FALSE){
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
+<?php }else{ ?>
+       <!-- Main content -->
+    <section name="separator-admin">
+        <h2><span style="color:red">Error: </span> Se necesita un identificador para poder hacer la reservación o la información que esta buscando ya no existe.</h2> <br>
+        <a type="back" href="./reservas.php">Volver</a>
+    </section>
+<?php } ?>

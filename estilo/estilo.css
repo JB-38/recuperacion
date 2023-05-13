@@ -91,6 +91,12 @@
       cursor: pointer;
     }
 
+    div[type="modal"] {
+      width: 100%; 
+      padding-left: 30%; 
+      padding-right: 30%;
+    }
+
     div[name="btn"]:hover {
       transform: scale(1.05);
     }
@@ -175,6 +181,14 @@
         font-weight: bold;
    }
 
+   input[type="search"]{
+        border-radius: 1.25rem;
+        height: 4vh;
+        border: 1px solid #bfbfbf;
+        margin: 10px;
+        padding: 10px;
+   }
+
    input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="time"], select{
         display: block;
         width: 100%;
@@ -234,7 +248,6 @@
         margin: 25px 0;
         font-size: 0.9em;
         font-family: sans-serif;
-        min-width: 400px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     }
 
@@ -261,15 +274,15 @@
         border-bottom: 2px solid #009879;
     }
 
-   @keyframes div[name="fade"] {
-     from {opacity: .4} 
-     to {opacity: 1}
-   }
+    /*@keyframes div[name="fade"] {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }*/
 
-   /* On smaller screens, decrease text size */
-   @media only screen and (max-width: 300px) {
-     a[name="prev"], a[next="next"] {font-size: 11px}
-   }
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      a[name="prev"], a[next="next"] {font-size: 11px}
+    }
 
     .tiempo{
       width: 98vw;
@@ -280,7 +293,7 @@
       align-items: center;
     }
 
-    .contenedor {
+    div[name="contenedor"] {
       width: 98vw;
       height: 97vh;
       display: inline-flex;
@@ -289,7 +302,7 @@
       align-items: center;
     }
 
-    .encabezado {
+    div[name="encabezado"] {
       position: relative;
       background: white;
       min-width: 300px;
@@ -298,29 +311,29 @@
       padding: 10px;
     }
 
-    .categoria {
+    div[name="categoria"] {
       opacity: 0.3;
       text-align: left;
     }
 
-    .pregunta {
+    div[name="pregunta"] {
       padding: 10px;
     }
 
-    .imagen {
+    img[name="imagen"] {
       object-fit: cover;
       height: 0px;
       width: 0px;
     }
     
-    .numero{
+    div[name="numero"]{
       position: absolute;
       opacity:0.3;
       top: 10px;
       right: 10px;
     }
     
-    .puntaje{
+    div[name="puntaje"]{
       padding:10px;
       color:white;
     } 
@@ -435,6 +448,12 @@
         table p {
           padding: 0 2%;
          }
+
+        div[type="modal"] {
+          width: 100%; 
+          padding-left: 0%; 
+          padding-right: 0%;
+        }
 
         .productos{
         /*scroll horizontal*/

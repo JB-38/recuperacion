@@ -7,43 +7,44 @@
 </head>
 
 <body>
-  <header class="header">
-         <nav class="nav">
-            <button class="nav-toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu">
-               <li class="nav-menu-item">
-                  <a href="index.html" class="nav-menu-link nav-link">Página Principal</a>
-               </li>
-               <li class="nav-menu-item">
-                  <a href="gastronomia.html" class="nav-menu-link nav-link">Gastronomía</a>
-               </li>
-               <li class="nav-menu-item">
-                  <a href="#" class="nav-menu-link nav-link">Rutas</a>
-               </li>
-               <li class="nav-menu-item">
-                  <a href="meteorologia.html" class="nav-menu-link nav-link">Meteorología</a>
-               </li>
-               <li class="nav-menu-item">
-                  <a href="juego.html" class="nav-menu-link nav-link">Juego</a>
-               </li>
-               <li class="nav-menu-item">
-                  <a href="./php/registro.php" class="nav-menu-link nav-link">Reservas</a>
-               </li>
-            </ul>
-         </nav>
-      </header>
+   <!-- Encabezado de la página -->
+   <header>
+      <nav>
+         <a href="index.html" style="margin-bottom: 5px; margin-top: 10px; margin-left: 20px">
+            <img src="multimedia/company_logo.jpg" style="width: 100px; height:60px; border-radius: 0.5rem;">
+         </a>
+         <ul>
+            <li>
+               <a href="index.html">Página Principal</a>
+            </li>
+            <li>
+               <a href="gastronomia.html">Gastronomía</a>
+            </li>
+            <li>
+               <a href="#">Rutas</a>
+            </li>
+            <li>
+               <a href="meteorologia.html">Meteorología</a>
+            </li>
+            <li>
+               <a href="juego.html">Juego</a>
+            </li>
+            <li>
+               <a href="./php/registro.php">Reservas</a>
+            </li>
+         </ul>
+      </nav>
+   </header>
 
-  <div class="contenedor">
-    <div class="puntaje" id="puntaje"></div>
-    <div class="encabezado">
-      <div class="categoria" id="categoria">
+  <div name="contenedor">
+    <div name="puntaje" id="puntaje"></div>
+    <div name="encabezado">
+      <div name="categoria" id="categoria">
       </div>
-      <div class="numero" id="numero"></div>
-      <div class="pregunta" id="pregunta">
+      <div name="numero" id="numero"></div>
+      <div name="pregunta" id="pregunta">
       </div>
-      <img src="#" class="imagen" id="imagen">
+      <img src="#" name="imagen" id="imagen">
     </div>
     <div name="btn" id="btn1" onclick="juego.oprimir_btn(0)"></div>
     <div name="btn" id="btn2" onclick="juego.oprimir_btn(1)"></div>

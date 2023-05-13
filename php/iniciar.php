@@ -1,3 +1,8 @@
+<?php
+require __DIR__ . "/nexo/nexo.php";
+LoginController::isAuth();
+?>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -12,10 +17,6 @@
     <!-- Enlace a los archivos de estilo CSS -->
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
     <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
-  
-    <!-- Custom CSS-->
-    <link href="css/general.css" rel="stylesheet">
-  
 
 </head>
 <body style="background: white;">
@@ -47,34 +48,21 @@
         </nav>
      </header>
          
-        <?php
+      <?php
+         $error = '';
+         if(!empty($_POST)){
+            $postdata = [
+               'identifier' => $_POST['usuario'],
+               'clave' => $_POST['clave']
+            ];
 
-  require 'conexion.php';
- // $id = $_GET["id"];
-  session_start();
+            $loginController = new LoginController();
+            $result = $loginController->Login($postdata);
+            $result = json_decode($result);
 
-  if (!empty($_GET['usuario']) && !empty($_GET['clave'])) {
-    $records = $conexion->prepare('SELECT id, usuario, clave FROM usuarios WHERE usuario = :usuario and clave = :clave' );
-    $records->bindParam(':usuario', $_GET['usuario']);
-    $records->bindParam(':clave', $_GET['clave']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-
-    $message = '';
-
-    if (!empty($results)) {
-      
-      $_SESSION['usuario'] = $results['usuario'];
-      header("Location: reservas.php");
-    } else {
-      $message = 'Lo sentimos, esas credenciales no coinciden';
-    }
-  }
-
-  if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
+            $error = $loginController->goToHome($result, $_POST['usuario']);
+         }
+      ?>
 
      <section name="separator">
           <div style="width: 100%; padding-left: 30%; padding-right: 30%;">
@@ -82,8 +70,13 @@
               <div style="padding: 1.25rem;">
                <div>
                   <h1>Iniciar Sesión</h1>
+                  <?php if(!empty($error)){ ?>
+                     <br>
+                     <h5 style="background: #d5b3bb;padding: 10px;border-radius: 0.5rem; color: black"><?= $error ?></h5>
+                     <br>
+                  <?php } ?>
                     <div>
-                     <form action="iniciar.php" method="GET">
+                     <form action="iniciar.php" method="POST">
                           <input type="text" placeholder="Usuario" name="usuario"> <br>
                           <input type="password" placeholder="Password" name="clave"> <br>
 
