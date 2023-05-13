@@ -3,39 +3,44 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Enlace a los archivos de estilo CSS -->
+  <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Registro</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-              <li class="breadcrumb-item active">Registro</li>
-              
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
- 
-<body id="home">
-
+<body>
+       <header>
+          <nav style="display: flex;">
+             <a href="../index.html" style="margin-bottom: 5px; margin-top: 10px; margin-left: 20px">
+                <img src="../multimedia/company_logo.jpg" style="width: 100px; height:60px; border-radius: 0.5rem;">
+             </a>
+             <ul>
+                <li>
+                   <a href="../index.html">Página Principal</a>
+                </li>
+                <li>
+                   <a href="../gastronomia.html">Gastronomía</a>
+                </li>
+                <li>
+                   <a href="../#">Rutas</a>
+                </li>
+                <li>
+                   <a href="../meteorologia.html">Meteorología</a>
+                </li>
+                <li>
+                   <a href="../juego.html">Juego</a>
+                </li>
+                <li>
+                   <a href="./registro.php">Reservas</a>
+                </li>
+             </ul>
+          </nav>
+       </header>
 <?php
 
   require 'conexion.php';
@@ -73,42 +78,36 @@
    if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-
-
-     <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              
-              <!-- /.card-header -->
-              <div>
-                 <a class="btn btn-success" href="./iniciar.php">Iniciar sesión</i></a>
-               </div>
-              <div class="card-body">
+     <section name="separator">
+          <div style="width: 100%; padding-left: 30%; padding-right: 30%;">
+            <div style="border: 1px solid #e7e4e4; border-radius: 0.5rem">
+              <div style="padding: 1.25rem;">
                   <h1>Registrate</h1>
-                   <div class="form-group">
-
-                  <form action="registro.php" method="POST">
-                    <input name="usuario" type="text" class="form-control" placeholder="Ingresa tú usuario"> <br>
-                    <input name="clave" type="password" class="form-control" placeholder="Ingresa tú clave"><br>
-                    <input name="confirm_password" type="password" class="form-control" placeholder="Confirma tú clave"><br>
-                    <input name="nombre" type="text" class="form-control" placeholder="Ingresa tú nombre"><br>
-                    <input name="apellido" type="text" class="form-control" placeholder="Ingresa tú apellido"><br>
-                    <input name="telefono" type="text" class="form-control" placeholder="Ingresa tú teléfono"><br>
-                    <input name="direccion" type="text" class="form-control" placeholder="Ingresa tú direccion"><br>
-                    <input class="btn btn-primary" type="submit" value="Enviar">
-                    
-                    <a class="btn btn-danger" href="../index.html">Volver</a>
-                  </form>
+                   <div>
+                      <form action="registro.php" method="POST">
+                        <input name="usuario" type="text" placeholder="Ingresa tú usuario"> <br>
+                        <input name="clave" type="password" placeholder="Ingresa tú clave"><br>
+                        <input name="confirm_password" type="password" placeholder="Confirma tú clave"><br>
+                        <input name="nombre" type="text" placeholder="Ingresa tú nombre"><br>
+                        <input name="apellido" type="text" placeholder="Ingresa tú apellido"><br>
+                        <input name="telefono" type="text" placeholder="Ingresa tú teléfono"><br>
+                        <input name="direccion" type="text" placeholder="Ingresa tú direccion"><br>
+                        
+                        <a type="back" href="../index.html">Volver</a>
+                        <input type="submit" value="Enviar">
+                        
+                      </form>
                   </div>
-            <!-- /.card -->
+              </div>
           </div>
-          <!-- /.col -->
+
+          <br>
+          <center>
+              <a href="./iniciar.php" style="color: green; text-decoration: underline; font-size: 20px">
+                ¿Ya tienes una cuenta? Ingresa al sistema.</i>
+              </a>
+          </center>
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
     </section>
 
   </body>

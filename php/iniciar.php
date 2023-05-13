@@ -6,39 +6,48 @@
 
     <title>Iniciar Reservación</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
- 
-    <!-- Custom Google Web Font -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Enlace a los archivos de estilo CSS -->
+    <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
   
     <!-- Custom CSS-->
     <link href="css/general.css" rel="stylesheet">
   
 
 </head>
-<body id="home">
-
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Iniciar sesión</h1>
-              </div><!-- /.col -->
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-                  <li class="breadcrumb-item active">Iniciar sesión</li>
-                  
-                </ol>
-              </div><!-- /.col -->
-            </div><!-- /.row -->
+<body style="background: white;">
+     <header>
+        <nav style="display: flex;">
+           <a href="../index.html" style="margin-bottom: 5px; margin-top: 10px; margin-left: 20px">
+              <img src="../multimedia/company_logo.jpg" style="width: 100px; height:60px; border-radius: 0.5rem;">
+           </a>
+           <ul>
+              <li>
+                 <a href="../index.html">Página Principal</a>
+              </li>
+              <li>
+                 <a href="../gastronomia.html">Gastronomía</a>
+              </li>
+              <li>
+                 <a href="../#">Rutas</a>
+              </li>
+              <li>
+                 <a href="../meteorologia.html">Meteorología</a>
+              </li>
+              <li>
+                 <a href="../juego.html">Juego</a>
+              </li>
+              <li>
+                 <a href="./registro.php">Reservas</a>
+              </li>
+           </ul>
+        </nav>
+     </header>
          
-         <?php
+        <?php
 
   require 'conexion.php';
  // $id = $_GET["id"];
@@ -67,31 +76,34 @@
       <p> <?= $message ?></p>
     <?php endif; ?>
 
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-               <div class="card-body">
-                    <div class="form-group">
-
+     <section name="separator">
+          <div style="width: 100%; padding-left: 30%; padding-right: 30%;">
+            <div style="border: 1px solid #e7e4e4; border-radius: 0.5rem">
+              <div style="padding: 1.25rem;">
+               <div>
+                  <h1>Iniciar Sesión</h1>
+                    <div>
                      <form action="iniciar.php" method="GET">
-                          <input type="text" class="form-control" placeholder="Usuario" name="usuario">
-                          <input type="password" class="form-control" placeholder="Password" name="clave">
-                          <input class="btn btn-primary" type="submit" value="Ingresar">                
+                          <input type="text" placeholder="Usuario" name="usuario"> <br>
+                          <input type="password" placeholder="Password" name="clave"> <br>
+
+                          <br>
+
+                          <a type="back" href="../index.html">Volver</a>
+                          <input type="submit" value="Ingresar">                
                       </form>
-                      <p class="mb-0">
-                        <a class="btn btn-primary" href="registro.php">Registro nuevo usuario</a>
-                        <a class="btn btn-danger" href="../index.html">Volver</a>
-                      </p>
                     </div>
-                    <!-- /.card -->
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
+               </div>
               </div>
-              <!-- /.container-fluid -->
-            </section>
+            </div>
+
+            <br>
+            <center>
+                <a href="registro.php" style="color: green; text-decoration: underline; font-size: 20px">
+                  ¿Todavía no te has registrado? Hazlo por aquí.</i>
+                </a>
+            </center>
+          </div>
+    </section>
   </body>
 </html>

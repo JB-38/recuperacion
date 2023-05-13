@@ -2,6 +2,14 @@ class Juego{
   preguntas_aleatorias = true;
   mostrar_pantalla_juego_términado = true;
   reiniciar_puntos_al_reiniciar_el_juego = true;
+  
+  interprete_bp;
+
+  constructor() {
+    var base_preguntas = this.readText("base-preguntas.json");
+    this.interprete_bp = JSON.parse(base_preguntas);
+    this.escogerPreguntaAleatoria();
+  };
 
   readText(ruta_local) {
     var texto = null;
@@ -13,12 +21,6 @@ class Juego{
     }
     return texto;
   }
-  interprete_bp;
-  constructor() {
-    var base_preguntas = this.readText("base-preguntas.json");
-    this.interprete_bp = JSON.parse(base_preguntas);
-    this.escogerPreguntaAleatoria();
-  };
   
   pregunta;
   posibles_respuestas;
@@ -108,7 +110,7 @@ class Juego{
   }
   
   desordenarRespuestas(pregunta) {
-      this.posibles_respuestas = [
+     this.posibles_respuestas = [
       pregunta.respuesta,
       pregunta.incorrecta1,
       pregunta.incorrecta2,
@@ -157,8 +159,6 @@ class Juego{
     }
     this.escogerPreguntaAleatoria();
   }
-  
-
   
   style(id) {
     return this.select_id(id).style;

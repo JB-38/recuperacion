@@ -11,54 +11,27 @@ $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="../estilo/layout.css">
 </head>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Recursos</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-              <li class="breadcrumb-item active">Recursos</li>
-              
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-        <div>
-			<a class="btn btn-success" href="./recurso.php">Nuevo <i class="fa fa-plus"></i></a>
-		</div>
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
+  <div>
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Datos de los Recursos</h3>
+    <section name="separator-admin">
+      <h2>Recursos</h2>
+      <div>
+        <div>
+          <div>
+            <div style="border: 1px solid #e7e4e4; border-radius: 0.5rem; background: white;">
+              <div>
+                <h1>Datos de los Recursos</h1>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="tablas" class="table table-bordered table-hover">
+              <div style="padding: 2%;">
+                <div style="text-align: left; margin-bottom: 10px">
+                  <a type="button" href="./recurso.php">Nuevo <i class="fa fa-plus"></i></a>
+                </div>
+                <table>
                   <thead>
                     <tr>
                         <th>Id</th> 
@@ -67,7 +40,6 @@ $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <th>Precio</th>
                         <th>Tipo</th>
                         <th>Reservar</th>
-                        
                     </tr>
                   </thead>
                         <tbody>
@@ -81,7 +53,9 @@ $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['precio'] ?></td>  
                                 <td><?php echo $dat['id_tipo'] ?></td>    
                     
-                                <td><a class="btn btn-sm" href="<?php echo "./reservar.php?id=" . $dat['id']?>"><i class="fa fa-edit"></i></a></td>
+                                <td><a type="button" href="<?php echo "./reservar.php?id=" . $dat['id']?>">
+                                      Reservar
+                                    </a></td>
                             </tr>
                             <?php
                                 } 
@@ -89,7 +63,7 @@ $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         </tbody>   
                         <tfoot>   
                            <tr>
-                           <<th>Id</th> 
+                           <th>Id</th> 
                             <th>Descripción</th>
                             <th>Límite de ocupantes</th>
                             <th>Precio</th>

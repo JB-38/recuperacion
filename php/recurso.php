@@ -1,52 +1,32 @@
 <?php include_once "./encabezado.html" ?>
 
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Nuevo Recurso</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-              <li class="breadcrumb-item active">Recursos</li>
-              
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-    <?php 
-        require "conexion.php";
-    ?>
+<?php 
+    require "conexion.php";
+?>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
+    <section name="separator">
           <!-- left column -->
-          <div class="col-md-12">
+          <div style="width: 100%; padding-left: 30%; padding-right: 30%;">
             <!-- jquery validation -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Registrar Nuevo Recurso</h3>
+            <div style="border: 1px solid #e7e4e4; border-radius: 0.5rem; background: white;">
+              <div>
+                <h3>Registrar Nuevo Recurso</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" id="quickForm" method="post" action="nuevo_recurso.php"> 
+              <form role="form" id="quickForm" method="post" action="nuevo_recurso.php" style="padding: 20px"> 
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nombre">Descripción</label>
-                    <input type="text" name="descripcion" class="form-control" required  placeholder="Descripción del recurso">
+                    <input type="text" name="descripcion" required  placeholder="Descripción del recurso">
                     <label for="direccion">Límite ocupantes</label>
-                    <input type="number"  name="limite" class="form-control" required  placeholder="Límite de ocupantes">
+                    <input type="number"  name="limite" required  placeholder="Límite de ocupantes">
                         
                     <label for="capacidad">Precio</label>
-                    <input type="text"  name="precio" class="form-control" required  placeholder="Precio del recurso">
+                    <input type="text"name="precio" required  placeholder="Precio del recurso">
                     <label for="etiqueta">Tipo de recurso</label>
-                    <select class="form-control" name="tipo">
+                    <select name="tipo">
                         <?php 
                         $sentencia = $conexion->query("SELECT * FROM  tipos;");
                         $data = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -64,10 +44,11 @@
                   </div>
                   
                 </div>
+                <br>
                 <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                  <a class="btn btn-danger" href="./reservas.php">Cancelar</a>
+                <div>
+                  <input type="submit" value="Guardar">
+                  <a type="back" href="./reservas.php">Cancelar</a>
                 </div>
               </form>
             </div>
@@ -75,13 +56,6 @@
             </div>
           <!--/.col (left) -->
           <!-- right column -->
-          <div class="col-md-6">
-
-          </div>
           <!--/.col (right) -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-  </div>

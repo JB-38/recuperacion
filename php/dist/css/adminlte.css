@@ -11466,16 +11466,18 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   width: 250px;
 }
 
-.layout-fixed .main-sidebar {
+aside {
   bottom: 0;
   float: none;
   height: 100vh;
   left: 0;
   position: fixed;
   top: 0;
+  width: 250px;
+  background-color: gray;
 }
 
-.layout-fixed .control-sidebar {
+.layout-fixed aside {
   bottom: 0;
   float: none;
   height: 100vh;
@@ -11488,7 +11490,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 @supports (-webkit-touch-callout: none) {
-  .layout-fixed .main-sidebar {
+  aside {
     height: inherit;
   }
 }
@@ -12961,7 +12963,8 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   .sidebar-mini.sidebar-collapse .visible-sidebar-mini {
     display: block !important;
   }
-  .sidebar-mini.sidebar-collapse.layout-fixed .main-sidebar:hover .brand-link {
+
+  aside:hover .brand-link {
     width: 250px;
   }
   .sidebar-mini.sidebar-collapse.layout-fixed .brand-link {

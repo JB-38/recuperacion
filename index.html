@@ -7,8 +7,6 @@
       <!-- Enlace a los archivos de estilo CSS -->
       <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
       <link rel="stylesheet" type="text/css" href="estilo/layout.css">
-      <!-- Enlace a la librería de iconos Font Awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
       <!-- Mostrar y ocultar objetos -->
       <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
       
@@ -72,17 +70,17 @@
                     <h1 style="margin-top: 10px;margin-bottom: 5px;"><strong>Castro de Coaña</strong></h1>
                   </div>
 
-                  <a name="prev" onclick="diapositivaa.plusSlides(-1)">❮</a>
-                  <a name="next" onclick="diapositivaa.plusSlides(1)">❯</a>
+                  <a name="prev" onclick="diapositiva.plusSlides(-1)">❮</a>
+                  <a name="next" onclick="diapositiva.plusSlides(1)">❯</a>
             </section>
             <br>
 
             <div style="text-align:center">
-              <span class="dot" onclick="diapositivaa.currentSlide(1)"></span> 
-              <span class="dot" onclick="diapositivaa.currentSlide(2)"></span> 
-              <span class="dot" onclick="diapositivaa.currentSlide(3)"></span> 
-              <span class="dot" onclick="diapositivaa.currentSlide(4)"></span> 
-              <span class="dot" onclick="diapositivaa.currentSlide(5)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(1)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(2)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(3)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(4)"></span> 
+              <span class="dot" onclick="diapositiva.currentSlide(5)"></span> 
               <br><br>
             </div>
          </main>
@@ -156,7 +154,7 @@
       <!-- Enlace a los archivos de script JS -->
       <script src="js/script.js"></script>
       <script>
-         const diapositivaa = new Diapositiva();
-      </script>
+         const diapositiva = new Diapositiva();
+         </script>
    </body>
 </html>
