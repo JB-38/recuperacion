@@ -41,9 +41,9 @@ class Rutas {
             "<br> <b> Longitud:  </b>"+ arrayLimpioRutas[12]+
             "<br> <b> Altitud:  </b>"+ arrayLimpioRutas[13]+"m"+
             "<br> <b> Recomendación:  </b>"+ arrayLimpioRutas[14]+
-            "<br> <b> Referencia 1:  </b> <a target='_blank' href="+arrayLimpioRutas[15]+">"+arrayLimpioRutas[15]+"</a>"+ 
-            "<br> <b> Referencia 2:  </b> <a target='_blank' href="+arrayLimpioRutas[16]+">"+arrayLimpioRutas[16]+"</a>"+
-            "<br> <b> Referencia 3:  </b> <a target='_blank' href="+arrayLimpioRutas[17]+">"+arrayLimpioRutas[17]+"</a>"+
+            "<br> <b> Referencia 1:  </b> <a target='_blank' style='color: blue' href="+arrayLimpioRutas[15]+">"+arrayLimpioRutas[15]+"</a>"+ 
+            "<br> <b> Referencia 2:  </b> <a target='_blank' style='color: blue' href="+arrayLimpioRutas[16]+">"+arrayLimpioRutas[16]+"</a>"+
+            "<br> <b> Referencia 3:  </b> <a target='_blank' style='color: blue' href="+arrayLimpioRutas[17]+">"+arrayLimpioRutas[17]+"</a>"+
             "<br> <b> Hitos:  </b>"+
             "<br> <b> Nombre:  </b>"+ arrayHitos[2]+
             "<br> <b> Descripción:  </b>"+ arrayHitos[3]+
@@ -53,6 +53,7 @@ class Rutas {
             "<br> <b> distancia entre hito anterior:  </b>"+ arrayHitos[7];
             
             if(arrayHitos[8].length>0)
+                document.getElementById("rutas").innerHTML+="<h2 style='margin-top: 10px; margin-bottom: 10px'> Galeria </h2>";
                 document.getElementById("rutas").innerHTML+="<br> <img src='multimedia/"+arrayHitos[8]+"' style='width:40%; height: 40vh;'> </img>";
             
             if(arrayHitos[9].length>0)
@@ -62,13 +63,20 @@ class Rutas {
                 document.getElementById("rutas").innerHTML+="<br> <img src='multimedia/"+arrayHitos[10]+"' style='width:40%; height: 40vh;'> </img>";
             
             if(arrayHitos[11].length>0)
-                document.getElementById("rutas").innerHTML+="<br> <video width='250' height='150'> <source src='multimedia/"+arrayHitos[11]+"' type='video/mp4'> </video>";
+                document.getElementById("rutas").innerHTML+="<h2 style='margin-top: 10px; margin-bottom: 10px'> Video </h2>";
+
+                if(arrayHitos[11] !== "")
+                document.getElementById("rutas").innerHTML+="<br> <video width='800' height='600' controls> <source src='multimedia/"+arrayHitos[11]+"' type='video/mp4'> </video>";
             
             if(arrayHitos[12].length>0)
-                document.getElementById("rutas").innerHTML+="<br> <video width='250' height='150'> <source src='multimedia/"+arrayHitos[12]+"' type='video/mp4'> </video>";
+
+                if(arrayHitos[12] !== "")
+                document.getElementById("rutas").innerHTML+="<br> <video width='800' height='600' controls> <source src='multimedia/"+arrayHitos[12]+"' type='video/mp4'> </video>";
             
             if(arrayHitos[13].length>0)
-                document.getElementById("rutas").innerHTML+="<br> <video width='250' height='150'> <source src='multimedia/"+arrayHitos[13]+"' type='video/mp4'> </video>";
+                
+                if(arrayHitos[13] !== "")
+                document.getElementById("rutas").innerHTML+="<br> <video width='800' height='600' controls> <source src='multimedia/"+arrayHitos[13]+"' type='video/mp4'> </video>";
             
             document.getElementById("rutas").innerHTML+="<br>"+
             "<br> <b> Nombre:  </b>"+ arrayHitos[16]+
@@ -87,13 +95,20 @@ class Rutas {
             "<div>"+
             "      <form onsubmit='rutas.generarKML("+i+")'>"+
             "         <input type='submit' value='Generar KML'>"+
-            "      </form>"+
+            "      </form> <br>"+
             "      <form onsubmit='rutas.generarSVG("+i+")'>"+
             "         <input type='submit' value='Generar SVG'>"+
             "      </form>"+
-            "   </div>"+
-            "<br> <br> <br>";
+            "</div>"+
+            "<br>" +
+            "<hr>" +
+            "<br>";
+
         }
+
+        document.getElementById('rutas').innerHTML = 
+            "<div style='border: 1px solid white; border-radius: 0.5rem; margin: 3%; background: white; padding: 1%;'>" 
+            + document.getElementById('rutas').innerHTML + "</div>";
         
     }
 
