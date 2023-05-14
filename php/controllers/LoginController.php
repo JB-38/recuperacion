@@ -35,7 +35,7 @@ class LoginController extends BaseController
         return $response;
     }
 
-    public function userAuth(){
+    public static function userAuth(){
         session_start();
 
         if(empty($_SESSION['usuario'])){
@@ -51,7 +51,7 @@ class LoginController extends BaseController
         }
     }
 
-    public function Logout(){
+    public static function Logout(){
         session_start();
 
         $_SESSION["usuario"] = "";

@@ -80,7 +80,7 @@ if(!empty($_SESSION['usuario'])){
 <?php }else{ ?>
        <!-- Main content -->
     <section name="separator-admin">
-        <h2><span style="color:red">Error: </span> Se necesita un identificador para poder ver el presupuesto o la información que esta buscando ya no existe.</h2> <br>
+        <h2>No hay presupuestos disponibles actualmente. </h2> <br>
         <a type="back" href="./reservas.php">Volver</a>
     </section>
 <?php } ?>
