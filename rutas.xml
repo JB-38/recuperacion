@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <rutas>
     <ruta> 
         <nombre>Ruta de los molinos</nombre> 
@@ -13,30 +14,34 @@
         <direccion_inicio>Consuegra </direccion_inicio>
         <latitud_geografica>39.4605 </latitud_geografica>
         <longitud_geograficas>-3.60672 </longitud_geograficas>
-        <recomendacion>si se llevan niños, se recomiendan que sean mayores de 10 años </recomendacion> 
+        <altitud_geograficas>1000</altitud_geograficas>
+        <recomendacion>9</recomendacion> 
         <referencia>https://www.motorpasion.com/otros/ruta-molinos-castilla-mancha </referencia>
         <referencia>https://www.tuscasasrurales.com/blog/ruta-molinos-de-viento-la-mancha-quijote/ </referencia>
-        <referencia>mibauldeblogs.com/ruta-molinos-de-viento-la-mancha/ </referencia>
-        <hito>
-            <nombre>Molino de mayor tamaño </nombre>
-            <descripcion>Disfrute del molino de mayor tamaño </descripcion>
-            <latitud_geog>39.4605 </latitud_geog>
-            <longitud_geog>-3.60680 </longitud_geog>
-            <distancia_entre_hito_anterior>0 </distancia_entre_hito_anterior>
-            <fotografia></fotografia>
-            <fotografia></fotografia>
-            <fotografia></fotografia>
-            <video></video>
-            <video></video>
-            <video></video>
+        <referencia>https://mibauldeblogs.com/ruta-molinos-de-viento-la-mancha/ </referencia>
+        <hitos>    
+            <hito>
+                <nombre>Molino de mayor tamaño </nombre>
+                <descripcion>Disfrute del molino de mayor tamaño </descripcion>
+                <latitud_geog>39.4605 </latitud_geog>
+                <longitud_geog>-3.60680 </longitud_geog>
+                <altitud_geog>1000</altitud_geog>
+                <distancia_entre_hito_anterior>0m </distancia_entre_hito_anterior>
+                <fotografia>molinosdevientoconsuegra.jpeg</fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video>gastronomia.mp4</video>
+                <video></video>
+                <video></video>
             </hito>
             <hito> 
                 <nombre>Molino más alto </nombre>
                 <descripcion>Disfrute el molino a mayor altura, con vista espectacular </descripcion>
                 <latitud_geog>39.4604 </latitud_geog>
                 <longitud_geog>-3.60686 </longitud_geog>
-                <distancia_entre_hito_anterior>50m </distancia_entre_hito_anterior>
-                <fotografia></fotografia>
+                <altitud_geog>1500</altitud_geog>
+                <distancia_entre_hito_anterior>600m </distancia_entre_hito_anterior>
+                <fotografia>molino.jpg</fotografia>
                 <fotografia></fotografia>
                 <fotografia></fotografia>
                 <video></video>
@@ -48,14 +53,16 @@
                 <descripcion> Disfrute del molino más antiguo y mejor conservado </descripcion> 
                 <latitud_geog> 39.4603 </latitud_geog>
                 <longitud_geog> -3.6090 </longitud_geog>
-                <distancia_entre_hito_anterior>100m </distancia_entre_hito_anterior>
-                <fotografia></fotografia>
+                <altitud_geog>1300</altitud_geog>
+                <distancia_entre_hito_anterior>300m </distancia_entre_hito_anterior>
+                <fotografia>molino2.jpg</fotografia>
                 <fotografia></fotografia>
                 <fotografia></fotografia>
                 <video></video>
                 <video></video>
                 <video></video>
             </hito>
+        </hitos>  
     </ruta>
 
     <ruta> 
@@ -72,30 +79,34 @@
         <direccion_inicio>Granada Guadix </direccion_inicio>
         <latitud_geografica>37.101166 </latitud_geografica>
         <longitud_geograficas>-3.60672 </longitud_geograficas>
-        <recomendacion>Ir acompañado de familiares o amigos </recomendacion> 
+        <altitud_geograficas>2000</altitud_geograficas>
+        <recomendacion>8</recomendacion> 
         <referencia>https://www.motorpasion.com/otros/17-mejores-rutas-espana-que-perderte-coche </referencia>
         <referencia>https://es.wikiloc.com/rutas-ciclismo/vuelta-a-sierra-nevada-desde-guadix-53493437 </referencia>
         <referencia>https://www.distanciasentreciudades.com/distancia-lanjaron-a-guadix </referencia>
-        <hito>
-            <nombre>Catedral de Guadix </nombre>
-            <descripcion>Catedral iconica de Guadix </descripcion>
-            <latitud_geog>37.101165 </latitud_geog>
-            <longitud_geog>-3.240442</longitud_geog>
-            <distancia_entre_hito_anterior>0m </distancia_entre_hito_anterior>
-            <fotografia></fotografia>
-            <fotografia></fotografia>
-            <fotografia></fotografia>
-            <video></video>
-            <video></video>
-            <video></video>
+        <hitos>
+            <hito>
+                <nombre>Catedral de Guadix </nombre>
+                <descripcion>Catedral iconica de Guadix </descripcion>
+                <latitud_geog>37.101165 </latitud_geog>
+                <longitud_geog>-3.240442</longitud_geog>
+                <altitud_geog> </altitud_geog>
+                <distancia_entre_hito_anterior>2000m </distancia_entre_hito_anterior>
+                <fotografia>Guadix.jpg</fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
             </hito>
             <hito> 
                 <nombre>Puerto de Santillana </nombre>
                 <descripcion>Espectacular vista </descripcion>
                 <latitud_geog>37.101163 </latitud_geog>
                 <longitud_geog>-3.240443 </longitud_geog>
+                <altitud_geog>1700</altitud_geog>
                 <distancia_entre_hito_anterior>50km </distancia_entre_hito_anterior>
-                <fotografia></fotografia>
+                <fotografia>Guadix1.jpg</fotografia>
                 <fotografia></fotografia>
                 <fotografia></fotografia>
                 <video></video>
@@ -107,14 +118,16 @@
                 <descripcion> Lugar increible</descripcion> 
                 <latitud_geog> 37.101111 </latitud_geog>
                 <longitud_geog> -3.247444 </longitud_geog>
+                <altitud_geog>2200</altitud_geog>
                 <distancia_entre_hito_anterior>100km </distancia_entre_hito_anterior>
-                <fotografia></fotografia>
+                <fotografia>Guadix2.jpg</fotografia>
                 <fotografia></fotografia>
                 <fotografia></fotografia>
                 <video></video>
                 <video></video>
                 <video></video>
             </hito>
+        </hitos> 
     </ruta>
     <ruta> 
         <nombre>Aragón</nombre> 
@@ -130,30 +143,34 @@
         <direccion_inicio>Alcorisa Teruel</direccion_inicio>
         <latitud_geografica>37.201111 </latitud_geografica>
         <longitud_geograficas>-3.347444 </longitud_geograficas>
-        <recomendacion>si se llevan niños, se recomiendan estar muy atentos </recomendacion> 
-        <referencia>https://www.motorpasion.com/otros/ruta-molinos-castilla-mancha </referencia>
+        <altitud_geograficas>200</altitud_geograficas>
+        <recomendacion>7</recomendacion> 
+        <referencia>https://www.alcaniz.es/es/turismo-info-para-el-visitante/que-visitar/naturaleza/la-estanca </referencia>
         <referencia>https://www.minube.com/rincon/embalse-de-la-estanca-a2212663 </referencia>
         <referencia>https://www.iagua.es/data/infraestructuras/embalses/estanca-alcaniz </referencia>
-        <hito>
-            <nombre>Embalse la estanca-alcaniz </nombre>
-            <descripcion>Disfrute de la vista </descripcion>
-            <latitud_geog>39.4305 </latitud_geog>
-            <longitud_geog>-3.30680 </longitud_geog>
-            <distancia_entre_hito_anterior>0m </distancia_entre_hito_anterior>
-            <fotografia></fotografia>
-            <fotografia></fotografia>
-            <fotografia></fotografia>
-            <video></video>
-            <video></video>
-            <video></video>
+        <hitos>        
+            <hito>
+                <nombre>Embalse la estanca-alcaniz </nombre>
+                <descripcion>Disfrute de la vista </descripcion>
+                <latitud_geog>39.4305 </latitud_geog>
+                <longitud_geog>-3.30680 </longitud_geog>
+                <altitud_geog>200 </altitud_geog>
+                <distancia_entre_hito_anterior>0m </distancia_entre_hito_anterior>
+                <fotografia>Embalse1.jpg</fotografia>
+                <fotografia></fotografia>
+                <fotografia></fotografia>
+                <video></video>
+                <video></video>
+                <video></video>
             </hito>
             <hito> 
                 <nombre>Mirador Valle arriba </nombre>
                 <descripcion>Disfrute de la vista del embalse </descripcion>
                 <latitud_geog>39.4704 </latitud_geog>
                 <longitud_geog>-3.50486 </longitud_geog>
+                <altitud_geog>500</altitud_geog>
                 <distancia_entre_hito_anterior>300m </distancia_entre_hito_anterior>
-                <fotografia></fotografia>
+                <fotografia>Embalse.jpg</fotografia>
                 <fotografia></fotografia>
                 <fotografia></fotografia>
                 <video></video>
@@ -165,13 +182,15 @@
                 <descripcion> Disfrute del relajante sonido del agua </descripcion> 
                 <latitud_geog> 39.4653 </latitud_geog>
                 <longitud_geog> -3.2490 </longitud_geog>
+                <altitud_geog>700</altitud_geog>
                 <distancia_entre_hito_anterior>500m </distancia_entre_hito_anterior>
-                <fotografia></fotografia>
+                <fotografia>Embalse2.jpg</fotografia>
                 <fotografia></fotografia>
                 <fotografia></fotografia>
                 <video></video>
                 <video></video>
                 <video></video>
             </hito>
+        </hitos> 
     </ruta>
 </rutas>

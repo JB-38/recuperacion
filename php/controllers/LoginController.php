@@ -43,7 +43,7 @@ class LoginController extends BaseController
         }
     }
 
-    public function isAuth(){
+    public static function isAuth(){
         session_start();
 
         if(!empty($_SESSION['usuario'])){
